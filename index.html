@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Decorator Pattern</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<style media="screen">
+			.reveal h2.js-text-shadow {
+				text-shadow: 1px 1px 15px rgba(0,0,0,0.7);
+			}
+
+			.reveal section img {
+				background: transparent;
+				border: none;
+				box-shadow: none;
+			}
+
+			.reveal a,
+			.js-highlight {
+				color: #FF5A5F;
+			}
+
+			.reveal a:hover {
+				color: #ffaf86;
+			}
+
+			.reveal .progress span {
+				background-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-up,
+			.reveal .controls .navigate-up.enabled {
+				border-bottom-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-right,
+			.reveal .controls .navigate-right.enabled {
+				border-left-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-down,
+			.reveal .controls .navigate-down.enabled {
+				border-top-color: #FF5A5F;
+			}
+
+			.reveal .controls .navigate-left,
+			.reveal .controls .navigate-left.enabled {
+				border-right-color: #FF5A5F;
+			}
+
+			.reveal li {
+				list-style-type: none;
+			}
+
+			.reveal li::before {
+				content: '▪';
+				display: inline-block;
+				color: #FF5A5F;
+				margin-right: 15px;
+			} 
+			.fragment .fade-up .point {
+				font-size: 10px;
+			}
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Design Patterns:<span class="js-highlight">Decorator Pattern</span></h3>
+				</section>
+				<section>
+					<h3>What is decorator pattern?</h3>
+					<ol>
+						<li class="fragment fade-up" style="font-size: 24px;">It is a Structural Pattern i.e these are concerned with how classes and objects can be composed, to form larger structures.</li>
+						<li class="fragment fade-up" style="font-size: 24px;">Decorator design pattern is used to modify the functionality of an object at runtime i.e  individual object gets the modified behavior without affecting the other instances of the same class.</li>
+					</ol>
+				</section>
+				<section>
+					<ol>
+						<img src="media/problemSolve.png"/>
+					</ol>
+				</section>
+				<section>
+					<h3>Intent</h3>
+					<ol>
+						<li class="fragment fade-up" style="font-size: 24px;">The Decorator Pattern attaches additional responsibilities to an object dynamically .Decorators provide flexible alternative to Sub-Classing for extending functionality.</li>
+					</ol>
+				</section>
+				<section>
+					<h3>How decorator pattern is implemented?</h3>
+					<ol>
+						<li class="fragment fade-up" style="font-size: 24px;">Decorator Pattern is implemented using abstract classes or interface with composition.</li>
+					</ol>
+				</section>
+				<section>
+					<h3 style="font-size: 24px;">What problem decorator pattern solves?</h3>
+					<ol>
+						<img src="media/decoratPattern.png" class="stretch"/>
+						<li class="fragment fade-up" style="font-size: 24px;">What if we want to get a car at runtime that has both the features of sports car and luxury car or if we want to have ten different kind of cars. Decorators to the rescue !!!</li>
+					</ol>
+				</section>
+				<section>
+					<h3 style="font-size: 24px;">Decorators Example 1</h3>
+					<ol>
+						<img src="media/decoratSchema.png"/>
+					</ol>
+				</section>
+				<section>
+							<h4>Example 1</h4>
+				</section>
+				<section>
+					<h3 style="font-size: 24px;">Decorators Example 2</h3>
+					<ol>
+						<img src="media/example2.png"/>
+					</ol>
+				</section>
+				<section>
+							<h8>Example 2</h8>
+				</section>
+				<section>
+							<h3>Advantages</h3>
+							<ol>
+								<li class="fragment fade-up" style="font-size: 24px;">Decorators provide a flexible alternative to subclassing for extending functionality.</li>
+								<li class="fragment fade-up" style="font-size: 24px;">Decorators allow behavior modification at runtime rather than going back into existing code and making changes.</li>
+								<li class="fragment fade-up" style="font-size: 24px;">The decorator pattern supports the principle that classes should be open for extension but closed for modification.</li>
+							</ol>
+				</section>
+				<section>
+							<h3>Disadvantages</h3>
+							<ol>
+								<li class="fragment fade-up" style="font-size: 24px;">It can be complicated to have decorators keep track of other decorators because to look back into multiple layers of the decorator chain starts to push the decorator pattern beyond its true intent</li>
+								<li class="fragment fade-up" style="font-size: 24px;">Decorators can result in many small objects in our design, and overuse can be complex.</li>
+							</ol>
+				</section>
+				<section>
+							<h8>Sayonara</h8>
+				</section>
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
